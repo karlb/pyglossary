@@ -56,12 +56,14 @@ class Reader(TextGlossaryReader):
 def write(
 	glos: GlossaryType,
 	filename: str,
+	fileObj: Optional["file"] = None,
 	encoding: str = "utf-8",
 	writeInfo: bool = True,
 	resources: bool = True,
 ) -> bool:
 	return glos.writeTabfile(
 		filename,
+		fileObj=fileObj,
 		encoding=encoding,
 		writeInfo=writeInfo,
 		resources=resources,
